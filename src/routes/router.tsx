@@ -12,6 +12,7 @@ const Home = lazy(() => import("../pages/Home"));
 const ForgotPassword = lazy(()=>import('../pages/user/ForgotPassword'))
 const ResetPassword = lazy(()=>import('../pages/user/ResetPassword'))
 const DoctorList = lazy(()=>import("../pages/user/DoctorPage"));
+const ProfileUser = lazy(()=>import("../pages/user/Profile"));
 
 const AboutPage = lazy (()=> import('../pages/user/AboutPage'))
 const ContactPage = lazy (()=> import('../pages/user/ContactPage'))
@@ -62,6 +63,7 @@ export const MainRouter = () => {
             <Route path="/" element={<ProtectedRoute />}>
             <Route path="/" element={<Home />} />
             <Route path="/user/doctor" element={<DoctorList />} />
+            <Route path="/user/Profile" element={<ProfileUser />} />
             </Route>
 
 
@@ -92,11 +94,9 @@ export const MainRouter = () => {
             <Route path="" element={<AdminProtectedRoute />}>
             <Route path="/admin" element={<AdminDashboard/>}/>
             <Route path="/admin/users" element={<AdminUserList/>}/>
-
             <Route path="/admin/doctors" element={<AdminDoctorList/>}/>
             <Route path="/admin/doctors/:id" element={<AdminDoctorDetails/>}/>
             <Route path="/admin/requesteddoctors" element={<RequestedDoctors/>}/>
-
             <Route path="/admin/department" element ={<AdminDepartmentList/>}/>
             <Route path="/admin/addDepartment" element ={<AddDepartmentList/>}/>
 
